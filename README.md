@@ -31,5 +31,14 @@ Method runMetro(config) #
         // Metro does not know how to handle the request.
       });
     });
+-If you are using Express, you can just pass processRequest as a middleware:
 
+const express = require('express');
+const app = express();
+
+app.use(
+  metroBundlerServer.processRequest.bind(metroBundlerServer),
+);
+
+app.listen(8081);
 
